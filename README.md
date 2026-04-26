@@ -1,20 +1,18 @@
-<<<<<<< HEAD
-# mindtrace
+# MindTrace
 
-A new Flutter project.
+MindTrace is an AI-driven emotional pattern analysis system designed to help users understand their mood patterns and process past experiences.
 
-## Getting Started
+## Features (Planned)
+- Mood tracking
+- AI-based chat support
+- Emotional pattern detection
 
-This project is a starting point for a Flutter application.
+## Day 1 Progress
+- Flutter project setup
+- Basic UI screens
+- Navigation implemented
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
-# MindTrace07052005
->>>>>>> e7e9490bc7a85c9eb146113520da0e7be247ce15
+## Tech Stack
+- Flutter
+- Firebase (upcoming)
+- AI integration (planned)
