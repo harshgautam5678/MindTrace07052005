@@ -1,8 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'mood_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
+  Future<String> _fetchLatestMood() async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) return 'No mood logged yet';
+
+    final snapshot = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(user.uid)
+        .collection('moods')
+        .orderBy('timestamp', descending: true)
+        .limit(1)
+        .get();
+
+    if (snapshot.docs.isEmpty) return 'No mood logged yet';
+
+    final score = snapshot.docs.first.data()['score'];
+    return 'Your last mood: $score/10';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +39,18 @@ class HomeScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 10),
-            const Text(
-              'Your last mood: 6/10',
-              style: TextStyle(color: Colors.grey),
-              textAlign: TextAlign.center,
+            FutureBuilder<String>(
+              future: _fetchLatestMood(),
+              builder: (context, snapshot) {
+                final text = snapshot.connectionState == ConnectionState.waiting
+                    ? 'Loading...'
+                    : (snapshot.data ?? 'No mood logged yet');
+                return Text(
+                  text,
+                  style: const TextStyle(color: Colors.grey),
+                  textAlign: TextAlign.center,
+                );
+              },
             ),
             const SizedBox(height: 20),
             ElevatedButton(

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "821551360275",
+    "project_id": "mindtrace-cd8ee",
+    "storage_bucket": "mindtrace-cd8ee.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821551360275:android:d7cdc478dccd5521fd52e6",
+        "android_client_info": {
+          "package_name": "com.example.mindtrace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0EV5Awn8axw0qhHEHPTL-8TUhaEKIMtY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
