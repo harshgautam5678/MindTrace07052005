@@ -74,6 +74,16 @@ lib/
 * Journal data stored per user
 * Firestore integration for journals
 * Real-time journal fetching and display
+  
+### ✅ Day 4
+
+* Added AI service layer
+* Implemented mock AI responses
+* Added emotion detection system
+* Created AIResponse model
+* Added Insights screen
+* Stored emotion metadata with journal entries
+* Improved emotional feedback experience
 
 ---
 
